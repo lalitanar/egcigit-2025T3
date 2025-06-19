@@ -12,6 +12,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build & Push Image
       run:
-        echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "${{ secrets.DOCKERUSERNAME }}" --password-stdin
-        docker image build -t "${{ secrets.DOCKERUSERNAME }}/egcigit-2025T3:latest" .
-        docker push "${{ secrets.DOCKERUSERNAME }}/egcigit-2025T3:latest"
+        echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "lalitaly" --password-stdin
+        docker image build -t lalitaly/egcigit-2025T3:latest .
+        docker push lalitaly/egcigit-2025T3:latest
+
+
+
+
+        
