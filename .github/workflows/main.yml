@@ -1,22 +1,19 @@
 name: Publish Node Docker
 on:
   push:
-    branches: [ main ]
+   branches: [ main ]
   pull_request:
     branches: [ main ]
-
+      
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v1
     - name: Build & Push Image
-      run:
+      run: |
         echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "lalitaly" --password-stdin
-        docker image build -t lalitaly/egcigit-2025T3:latest .
-        docker push lalitaly/egcigit-2025T3:latest
-
-
-
-
-        
+        docker image build -t lalitaly/egcogit:latest .
+        docker push lalitaly/egcogit:latest
